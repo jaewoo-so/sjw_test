@@ -12,6 +12,9 @@ kramdown:
   math_engine: mathjax
   syntax_highlighter: rouge
 
+baseurl: ""
+url: "https://jaewoo-so.github.io/sjw_test/"
+
 # Name of your site (displayed in the navbar)
 name: brutalist-blog
 
