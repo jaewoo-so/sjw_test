@@ -1,0 +1,11 @@
+Model Name,AUC
+Random Forest,0.8354678666205146
+Lightgbm,0.8344294450213454
+Xgboost,0.8241606092073381
+Multilayer Neural Network ,0.8190838813891773
+Penalized Regression : Ridge,0.8159686165916696
+Linear Discriminant Analysis,0.8140071535710165
+Gaussian Process ,0.8041998384677512
+Support Vector Machine,0.7867774316372447
+Penalized Regression : Lasso,0.7836621668397369
+Quadratic Discriminant Analysis,0.7687781239183108
