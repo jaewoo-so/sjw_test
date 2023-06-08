@@ -3,38 +3,10 @@ layout: default
 ---
 
 <section class="posts">
-
-<h2>2022 year</h2>
 <ul>
-    {% for post in site.tags.year22 %}
-    <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m" }}</time></li>
-    {% endfor %}
-    </ul>
-<ul>
-
-<h2>2021 year</h2>
-<ul>
-    {% for post in site.tags.year21 %}
-    <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m" }}</time></li>
-    {% endfor %}
-    </ul>
-<ul>
-
-<h2>Competitions</h2>
-<ul>
-    {% for post in site.tags.competitions %}
-    <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m" }}</time></li>
-    {% endfor %}
-    </ul>
-<ul>
-
-<h2>Publication and Patents</h2>
-<ul>
-    {% for post in site.tags.publication_patents %}
-    <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m" }}</time></li>
-    {% endfor %}
-    </ul>
-<ul>
-
+{% for post in site.posts %}
+<li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%m-%d-%Y" }}</time></li>
+{% endfor %}
+</ul>
 </section>
 
