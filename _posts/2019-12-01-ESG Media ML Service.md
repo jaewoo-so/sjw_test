@@ -1,7 +1,10 @@
 ---
-layout: post
+permalink: /tags/
+layout: tags
 title:  "ESG Media Machine-Learning Service Pipeline"
 date:   2023-01-01
+classes: wide
+layout: tags
 tags: [year22]
 ---
 

@@ -1,6 +1,9 @@
 ---
-layout: post
+permalink: /tags/
+layout: tags
 title:  "Clinical decision support algorithm based on machine learning to assess the clinical response to anti–pd-1 therapy"
+classes: wide
+layout: tags
 tags: [publication_patents]
 ---
 
