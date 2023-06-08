@@ -1,7 +1,5 @@
 ---
-layout: search
 title: Search
-subtitle: 
-permalink: /search.html
+layout: search
+permalink: /search/
 ---
-

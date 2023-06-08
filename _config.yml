@@ -1,241 +1,194 @@
-# Find errors on this file with http://www.yamllint.com/
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your entire site, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# `jekyll serve`. If you change this file, please restart the server process.
 
-# Chulapa docs: https://dieghernan.github.io/chulapa/docs/02-config
+# Theme Settings
+#
+# Review documentation to determine if you should use `theme` or `remote_theme`
+# https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/#installing-the-theme
 
-# XX. Installing Chulapa
+# theme                  : "minimal-mistakes-jekyll"
+# remote_theme           : "mmistakes/minimal-mistakes"
+minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
-# With remote theme
-remote_theme: dieghernan/chulapa
-
-# With gem based method do this instead
-#theme: chulapa-jekyll
-# And at this to your Gemfile
-# gem install 'chulapa-jekyll'
-
-
-# A. Site Settings /SEO options
-# Overall options for your site, would affect your site SEO
-# Default values are explained
-locale                  :     #default["en-US"] format language-TERRITORY , e.g fr, en-GB, es-MX, pt-BR
-title                   :     #default["repository_name"]
-title_separator         :     #default [" | "]
-subtitle                :     #default [your-repository-tagline]
-description             :     #default [your-repository-tagline]
-url                     :     #See baseurl - On Github Pages you may leave it blank - If you use CNAME use your domain
-baseurl                 :     #On Github Pages you may leave it blank. Have a look to: https://byparker.com/blog/2014/clearing-up-confusion-around-baseurl/
-words_per_minute        :     #default[200]
-timezone                :     #"Europe/Madrid ,see https://jekyllrb.com/docs/configuration/options/ and https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-
-# SEO
-og_image                :     #default[author.avatar (see below)] or [github-avatar]
-twitter_site            :     #Avoid @
-author:
-  name                  :     # Name Surname Company
-  avatar                :     # Try a square file. Info: Your github avatar on https://github.com/[USERNAME].png
-  location              :     # New York, USA
-  links:
-    - url:  #A link or email: https://twitter.com/jack, mail@example.com
-      icon: # A Fontawesome code: fab fa-twitter - see https://fontawesome.com/
-      label: # A Label for the icon: Twitter
-    - url:  # Another link
-      icon: # Another FontAwesome code
-      label: # Another label
-
-fa_version: #default ["6"] Use 6 or 5
-fa_kit_code: # Your FontAwesome kit code. If not provided a free hosted version (slower) will be loaded:  https://fontawesome.com/
-fa_v4_support: #Bool Add FontAwesome 4 support
-# Web tracking - Google services https://analytics.google.com/analytics/web/
-# gtag_id is the preferred option, see https://developers.google.com/analytics/devguides/collection/gtagjs/migration?hl=en
-# analytics provided for backwards compatibility
-gtag_id                 :
-analytics_id            :
-
-# Search providers
-# Available free search engines:
-# - lunr https://lunrjs.com/
-# - algolia v4 https://www.algolia.com/ - needs further configuration
-# - google custom search engine https://cse.google.es/
-search:
-  provider              : algolia #Select a provider for enable search: lunr, algolia, google
-  label                 :  #default ["Search"] Text on navbar when search is enabled
-  landing_page          :  #default ["/search"] Link on navbar
-  lunr_maxwords         :  #default [30] lunr only - May slow down your site build
-  algolia_logo          :  true #Displays algolia logo. Should be set to true if you are on a community plan, otherwise false.
-
-google_cse_id: #Your cse id
-# This site uses jekyll-algolia plugin https://community.algolia.com/jekyll-algolia/
-# Recommended additional configuration provided, could be modified. Add your own parameters
-algolia:
-  application_id        : #As per your Algolia account
-  index_name            : #As per your Algolia account
-  search_only_api_key   : #As per your Algolia account
-  files_to_exclude:         #Optional
-    - _layouts/*.html
-    - _includes/*.html
-    - docs/_pages/*
-    - docs/blog/*
-  extensions_to_index:      #Optional
-    - html
-    - md
-  searchableAttributes:     #Optional
-    - title
-    - headings
-    - unordered(content)
-    - unordered(subtitle)
-    - unordered(categories)
-    - unordered(collection)
-    - unordered(tags)
-  customRanking:            #Optional
-    - desc(include_on_search)
-    - desc(title)
-    - desc(content)
-    - desc(subtitle)
-
+# Site Settings
+locale                   : "en-US"
+title                    : "Site Title"
+title_separator          : "-"
+subtitle                 : # site tagline that appears below site title in masthead
+name                     : "Your Name"
+description              : "An amazing website."
+url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+baseurl                  : # the subpath of your site, e.g. "/blog"
+repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
+logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
+masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
+# breadcrumbs            : false # true, false (default)
+words_per_minute         : 200
 comments:
-  provider:         #Enable comments via Disqus, giscus, Cactus.chat, cusdis
-  disqus_shortname: #Your site id : check your address https://{{ disqus.shortname }}.disqus.com/admin/
-  cactus_shortname: #Your site id as registered with Cactus.chat
-  cusdis_app_id:    # Your cusdis app id
-  cusdis_host:      # Optionally you can use your own host
-  website_id:       # Welcomments id
-  
+  provider               : # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "giscus", "custom"
+  disqus:
+    shortname            : # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
+  discourse:
+    server               : # https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 , e.g.: meta.discourse.org
+  facebook:
+    # https://developers.facebook.com/docs/plugins/comments
+    appid                :
+    num_posts            : # 5 (default)
+    colorscheme          : # "light" (default), "dark"
+  utterances:
+    theme                : # "github-light" (default), "github-dark"
+    issue_term           : # "pathname" (default)
+  giscus:
+    repo_id              : # Shown during giscus setup at https://giscus.app
+    category_name        : # Full text name of the category
+    category_id          : # Shown during giscus setup at https://giscus.app
+    discussion_term      : # "pathname" (default), "url", "title", "og:title"
+    reactions_enabled    : # '1' for enabled (default), '0' for disabled
+    theme                : # "light" (default), "dark", "dark_dimmed", "transparent_dark", "preferred_color_scheme"
+  staticman:
+    branch               : # "master"
+    endpoint             : # "https://{your Staticman v3 API}/v3/entry/github/"
+reCaptcha:
+  siteKey                :
+  secret                 :
+atom_feed:
+  path                   : # blank (default) uses feed.xml
+  hide                   : # true, false (default)
+search                   : # true, false (default)
+search_full_content      : # true, false (default)
+search_provider          : # lunr (default), algolia, google
+lunr:
+  search_within_pages    : # true, false (default)
+algolia:
+  application_id         : # YOUR_APPLICATION_ID
+  index_name             : # YOUR_INDEX_NAME
+  search_only_api_key    : # YOUR_SEARCH_ONLY_API_KEY
+  powered_by             : # true (default), false
+google:
+  search_engine_id       : # YOUR_SEARCH_ENGINE_ID
+  instant_search         : # false (default), true
+# SEO Related
+google_site_verification :
+bing_site_verification   :
+naver_site_verification  :
+yandex_site_verification :
+baidu_site_verification  :
+
+# Social Sharing
+twitter:
+  username               :
+facebook:
+  username               :
+  app_id                 :
+  publisher              :
+og_image                 : # Open Graph/Twitter default site image
+# For specifying social profiles
+# - https://developers.google.com/structured-data/customize/social-profiles
+social:
+  type                   : # Person or Organization (defaults to Person)
+  name                   : # If the user or organization name differs from the site's name
+  links: # An array of links to social media profiles
+
+# Analytics
+analytics:
+  provider               : false # false (default), "google", "google-universal", "google-gtag", "custom"
+  google:
+    tracking_id          :
+    anonymize_ip         : # true, false (default)
 
 
-# B. Navigation
-# Configure your navbar and the footer of your site
+# Site Author
+author:
+  name             : "Your Name"
+  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  bio              : "I am an **amazing** person."
+  location         : "Somewhere"
+  email            :
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      # url: "mailto:your.name@email.com"
+    - label: "Website"
+      icon: "fas fa-fw fa-link"
+      # url: "https://your-website.com"
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      # url: "https://twitter.com/"
+    - label: "Facebook"
+      icon: "fab fa-fw fa-facebook-square"
+      # url: "https://facebook.com/"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      # url: "https://github.com/"
+    - label: "Instagram"
+      icon: "fab fa-fw fa-instagram"
+      # url: "https://instagram.com/"
 
-# Navbar:
-#   "brand" options would be set on the left side of your navbar
-#   "nav" would be set on the right side. Two-level nav links available
-navbar:
-  style     :  #default is the classical top navbar, set "fab" for a floating action button navbar or "dual"
-  expand    :  # At which device size expand the navbar menu. default[md] https://getbootstrap.com/docs/4.5/layout/overview/
-  brand:
-    title   :  # Title in navbar
-    url     :  # default["url/baseurl"]
-    img     :  # An small image, try 30x30px
-  nav:
-  - title   : # Label
-    url     : # url
-  - title   : # Label submenu
-    child:
-     - title: # Child label
-       url  : # child url
-     - title: # Child label
-       url  : # child url
-
-#Social links to be placed on your site footer
+# Site Footer
 footer:
   links:
-    - label : #Label
-      icon  : # Fontawesome 5 icon
-      url   : # A link or email: https://twitter.com/jack, mail@example.com
-  copyright: # default is © <year> <name>
-
-# C. Theme Settings
-# Google Fonts https://fonts.google.com/, add as many as you need
-googlefonts:
- # - url : # 'https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap'
-
-# Theme and colors
-chulapa-skin:
-  highlight     :  # default["default"]
-  skin         :  # Optional predefined skins
-  autothemer    :  # Bool: Use autotheming
-  vars          :
-    primary     :   #default ["#007bff"] - Bootstrap blue
-
-# D. Jekyll Defaults and collections: see https://jekyllrb.com/
-
-# Blog pagination: on this site /blog/index.html. https://jekyllrb.com/docs/pagination/
-paginate: 4
-paginate_path: "/blog/page:num/"
-paginator_maxnum: 3  #default[3] Custom: max of number to be displayed on the paginator
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      # url:
+    - label: "Facebook"
+      icon: "fab fa-fw fa-facebook-square"
+      # url:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      # url:
+    - label: "GitLab"
+      icon: "fab fa-fw fa-gitlab"
+      # url:
+    - label: "Bitbucket"
+      icon: "fab fa-fw fa-bitbucket"
+      # url:
+    - label: "Instagram"
+      icon: "fab fa-fw fa-instagram"
+      # url:
 
 
-# Collections https://jekyllrb.com/docs/step-by-step/09-collections/
-collections:
-  demo:
-    output: true
-    permalink: /demo/:name
-  docs:
-    output: true
-    permalink: /docs/:name
-  skins:
-    output: true
-    permalink: /skins/:name
-collections_dir     : docs/collections
-permalink           : /:year:month:day_:title/
-
-
-# Defaults https://jekyllrb.com/docs/configuration/front-matter-defaults/
-defaults:
-  -
-    scope:
-      path: ""
-    values:
-      layout: "default"
-      header_type: "base"
-      include_on_search   : false
-      cloudtag_url        : "/tags"       #This is where the link on tags would redirect
-      cloudcategory_url   : "/categories" #This is where the link on categories would redirect
-  -
-    scope:
-      path: ""
-      type: "posts"
-    values:
-      header_type       : "post"
-      include_on_search : true
-      include_on_feed   : true
-      show_date         : true
-      show_related      : true
-      show_bottomnavs   : true
-      show_sociallinks  : true
-      show_comments     : true
-      show_tags         : true
-      show_categories   : true
-      show_author       : true
-      show_toc          : false
-  -
-    scope:
-      path: ""
-      type: "demo"
-    values:
-      header_type       : "hero"
-      show_related      : true
-      show_bottomnavs   : true
-      show_sociallinks  : true
-      include_on_search : true
-      include_on_feed   : true
-
-
-
-
-# XX. Other settings - no need to modify
-# HTML Compression
-# - https://jch.penibelst.de/
-compress_html:
-  clippings: all
-  blanklines: true
-
-plugins:
-  - jekyll-github-metadata
-  - jekyll-paginate
-  - jekyll-include-cache
-  - jekyll-sitemap
-
-# Exclude these files from production site
-exclude:
-  - LICENSE
-  - README.md
-  - Gemfile
-  - vendor
-  - /docs # ignore Chulapa /docs
-  - /test # ignore Chulapa /test
-  - github-metrics.svg
-
+# Reading Files
 include:
- - _pages
+  - .htaccess
+  - _pages
+exclude:
+  - "*.sublime-project"
+  - "*.sublime-workspace"
+  - vendor
+  - .asset-cache
+  - .bundle
+  - .jekyll-assets-cache
+  - .sass-cache
+  - assets/js/plugins
+  - assets/js/_main.js
+  - assets/js/vendor
+  - Capfile
+  - CHANGELOG
+  - config
+  - Gemfile
+  - Gruntfile.js
+  - gulpfile.js
+  - LICENSE
+  - log
+  - node_modules
+  - package.json
+  - package-lock.json
+  - Rakefile
+  - README
+  - tmp
+  - /docs # ignore Minimal Mistakes /docs
+  - /test # ignore Minimal Mistakes /test
+keep_files:
+  - .git
+  - .svn
+encoding: "utf-8"
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+
 
 # Conversion
 markdown: kramdown
@@ -244,19 +197,96 @@ lsi: false
 excerpt_separator: "\n\n"
 incremental: false
 
+
 # Markdown Processing
 kramdown:
   input: GFM
   hard_wrap: false
   auto_ids: true
   footnote_nr: 1
-  footnote_backlink: '&uarr;'
   entity_output: as_char
-  toc_levels: 2..6
+  toc_levels: 1..6
   smart_quotes: lsquo,rsquo,ldquo,rdquo
   enable_coderay: false
+
 
 # Sass/SCSS
 sass:
   sass_dir: _sass
   style: compressed # https://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
+
+
+# Outputting
+permalink: /:categories/:title/
+paginate: 5 # amount of posts to show
+paginate_path: /page:num/
+timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+
+
+# Plugins (previously gems:)
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jekyll-include-cache
+
+# mimic GitHub Pages with --safe
+whitelist:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jekyll-include-cache
+
+
+# Archives
+#  Type
+#  - GitHub Pages compatible archive pages built with Liquid ~> type: liquid (default)
+#  - Jekyll Archives plugin archive pages ~> type: jekyll-archives
+#  Path (examples)
+#  - Archive page should exist at path when using Liquid method or you can
+#    expect broken links (especially with breadcrumbs enabled)
+#  - <base_path>/tags/my-awesome-tag/index.html ~> path: /tags/
+#  - <base_path>/categories/my-awesome-category/index.html ~> path: /categories/
+#  - <base_path>/my-awesome-category/index.html ~> path: /
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
+# https://github.com/jekyll/jekyll-archives
+# jekyll-archives:
+#   enabled:
+#     - categories
+#     - tags
+#   layouts:
+#     category: archive-taxonomy
+#     tag: archive-taxonomy
+#   permalinks:
+#     category: /categories/:name/
+#     tag: /tags/:name/
+
+
+# HTML Compression
+# - https://jch.penibelst.de/
+compress_html:
+  clippings: all
+  ignore:
+    envs: development
+
+
+# Defaults
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: # true
+      share: true
+      related: true

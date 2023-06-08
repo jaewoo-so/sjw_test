@@ -3,17 +3,14 @@ name: "Documentation"
 about: "Found a typo or something that needs clarification?"
 ---
 
+<!-- Thanks for taking the time to open an issue and help make the docs better -->
 
-**Motivation**
+## Motivation
 
-Why should we update our docs?
+<!-- Why should we update our docs? -->
 
-What should we do instead?
+<!-- What should we do instead? -->
 
-**Suggestion**
+## Suggestion
 
-What should we do instead?
-
-**Fix**
-
-Did you find a typo/mistake?
+<!-- What should we do instead? -->

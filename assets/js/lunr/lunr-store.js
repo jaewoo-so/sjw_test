@@ -1,20 +1,23 @@
 ---
-layout: null
+layout: none
 ---
-/*
-Copyright (c) 2013-2020 Michael Rose and contributors
-MIT License
-From minimal-mistakes: https://github.com/mmistakes/minimal-mistakes/
-*/
-{%- if site.search.provider =="lunr" -%}
-{% assign maxwords = site.search.lunr_maxwords | default: "30"  %}
+
 var store = [
-  {%- assign indexlunr = site.pages | concat: site.documents |  where_exp:'doc','doc.include_on_search != false' -%}
-  {%- for doc in indexlunr -%}
+  {%- for c in site.collections -%}
+    {%- if forloop.last -%}
+      {%- assign l = true -%}
+    {%- endif -%}
+    {%- assign docs = c.docs | where_exp:'doc','doc.search != false' -%}
+    {%- for doc in docs -%}
+      {%- if doc.header.teaser -%}
+        {%- capture teaser -%}{{ doc.header.teaser }}{%- endcapture -%}
+      {%- else -%}
+        {%- assign teaser = site.teaser -%}
+      {%- endif -%}
       {
         "title": {{ doc.title | jsonify }},
-        "subtitle": {{ doc.subtitle | jsonify }},
         "excerpt":
+          {%- if site.search_full_content == true -%}
             {{ doc.content | newline_to_br |
               replace:"<br />", " " |
               replace:"</p>", " " |
@@ -24,12 +27,58 @@ var store = [
               replace:"</h4>", " " |
               replace:"</h5>", " " |
               replace:"</h6>", " "|
-            strip_html | strip_newlines | truncatewords: maxwords | jsonify }},
+            strip_html | strip_newlines | jsonify }},
+          {%- else -%}
+            {{ doc.content | newline_to_br |
+              replace:"<br />", " " |
+              replace:"</p>", " " |
+              replace:"</h1>", " " |
+              replace:"</h2>", " " |
+              replace:"</h3>", " " |
+              replace:"</h4>", " " |
+              replace:"</h5>", " " |
+              replace:"</h6>", " "|
+            strip_html | strip_newlines | truncatewords: 50 | jsonify }},
+          {%- endif -%}
         "categories": {{ doc.categories | jsonify }},
-        "date": {{ doc.date | date: "%Y-%m-%d" | jsonify }},
         "tags": {{ doc.tags | jsonify }},
-        "url": {{ doc.url | absolute_url | jsonify }},
-        "img": {{ doc.og_image | default: doc.header_img | absolute_url | jsonify }}
-      }{%- unless forloop.last -%},{%- endunless -%} 
-  {%- endfor -%}]
-{%- endif -%}
+        "url": {{ doc.url | relative_url | jsonify }},
+        "teaser": {{ teaser | relative_url | jsonify }}
+      }{%- unless forloop.last and l -%},{%- endunless -%}
+    {%- endfor -%}
+  {%- endfor -%}{%- if site.lunr.search_within_pages -%},
+  {%- assign pages = site.pages | where_exp:'doc','doc.search != false' -%}
+  {%- for doc in pages -%}
+    {%- if forloop.last -%}
+      {%- assign l = true -%}
+    {%- endif -%}
+  {
+    "title": {{ doc.title | jsonify }},
+    "excerpt":
+        {%- if site.search_full_content == true -%}
+          {{ doc.content | newline_to_br |
+            replace:"<br />", " " |
+            replace:"</p>", " " |
+            replace:"</h1>", " " |
+            replace:"</h2>", " " |
+            replace:"</h3>", " " |
+            replace:"</h4>", " " |
+            replace:"</h5>", " " |
+            replace:"</h6>", " "|
+          strip_html | strip_newlines | jsonify }},
+        {%- else -%}
+          {{ doc.content | newline_to_br |
+            replace:"<br />", " " |
+            replace:"</p>", " " |
+            replace:"</h1>", " " |
+            replace:"</h2>", " " |
+            replace:"</h3>", " " |
+            replace:"</h4>", " " |
+            replace:"</h5>", " " |
+            replace:"</h6>", " "|
+          strip_html | strip_newlines | truncatewords: 50 | jsonify }},
+        {%- endif -%}
+      "url": {{ doc.url | absolute_url | jsonify }}
+  }{%- unless forloop.last and l -%},{%- endunless -%}
+  {%- endfor -%}
+{%- endif -%}]

@@ -1,291 +1,330 @@
-remote_theme: dieghernan/chulapa
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your entire site, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# `jekyll serve`. If you change this file, please restart the server process.
 
+remote_theme             : "mmistakes/minimal-mistakes@4.24.0"
 
-repository: dieghernan/chulapa
-url: "https://dieghernan.github.io"
-baseurl: "/chulapa"
+minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
-title: Chulapa
-subtitle: A full flexible Jekyll theme
-description: Template for creating free sites on Github Pages
-og_image: "./assets/img/site/banner.png"
-twitter_site: dhernangomez
-timezone: "Europe/Madrid"
-author:
-  name: dieghernan
-  avatar: ./assets/img/site/dieghernan-avatar.png
-  location: Madrid, Spain
-  links:
-    - url: https://github.com/dieghernan/
-      icon: "fab fa-github"
-      label: GitHub
-    - url: https://dieghernan.github.io/
-      icon: fas fa-blog
-      label: Blog
-    - url: https://stackoverflow.com/users/7877917/dieghernan
-      icon: "fab fa-stack-overflow"
-      label: StackOverflow
-gtag_id:  UA-139034853-5
-search:
-  provider: algolia
-  algolia_logo: true
-algolia:
-  application_id        : "KOIKA5PDQO"
-  index_name            : "chulapa"
-  search_only_api_key   : "7f1fe42bef3f03458cb3a911ebc7e0ac"
-  files_to_exclude:         #Optional
-    - _layouts/*.html
-    - _includes/*.html
-    - _pages/liquid*
-  extensions_to_index:      #Optional
-    - html
-    - md
-  searchableAttributes:     #Optional
-    - title
-    - headings
-    - unordered(content)
-    - unordered(subtitle)
-    - unordered(categories)
-    - unordered(collection)
-    - unordered(tags)
-  customRanking:            #Optional
-    - desc(include_on_search)
-    - desc(title)
-    - desc(content)
-    - desc(subtitle)
+# Site Settings
+locale                   : "en-US"
+title                    : "Minimal Mistakes"
+title_separator          : "-"
+subtitle                 : "A Jekyll theme"
+name                     : &name "Michael Rose" # &name is a YAML anchor which can be *referenced later
+description              : &description "A flexible Jekyll theme for your blog or site with a minimalist aesthetic."
+url                      : https://mmistakes.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+baseurl                  : "/minimal-mistakes" # the subpath of your site, e.g. "/blog"
+repository               : "mmistakes/minimal-mistakes"
+teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
+logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
+masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
+# breadcrumbs            : false # true, false (default)
+words_per_minute         : 200
 comments:
-  provider: welcomments
-  cusdis_app_id: "ba6333c9-c7b1-4578-a932-e9ee3e71f120"
-  website_id: "XaFqz82GQETRJnLi7verVsyBS" 
+  provider               : "false" # false (default), "disqus", "discourse", "facebook", "staticman_v2", "staticman", "utterances", "giscus", "custom"
+  disqus:
+    shortname            :
+  discourse:
+    server               : # https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 , e.g.: meta.discourse.org
+  facebook:
+    # https://developers.facebook.com/docs/plugins/comments
+    appid                :
+    num_posts            : # 5 (default)
+    colorscheme          : # "light" (default), "dark"
+  utterances:
+    theme                : # "github-light" (default), "github-dark"
+    issue_term           : # "pathname" (default)
+  giscus:
+    repo_id              : # Shown during giscus setup at https://giscus.app
+    category_name        : # Full text name of the category
+    category_id          : # Shown during giscus setup at https://giscus.app
+    discussion_term      : # "pathname" (default), "url", "title", "og:title"
+    reactions_enabled    : # '1' for enabled (default), '0' for disabled
+    theme                : # "light" (default), "dark", "dark_dimmed", "transparent_dark", "preferred_color_scheme"
+reCaptcha:
+  siteKey                : # "6LdRBykTAAAAAFB46MnIu6ixuxwu9W1ihFF8G60Q"
+  secret                 : # "PznnZGu3P6eTHRPLORniSq+J61YEf+A9zmColXDM5icqF49gbunH51B8+h+i2IvewpuxtA9TFoK68TuhUp/X3YKmmqhXasegHYabY50fqF9nJh9npWNhvITdkQHeaOqnFXUIwxfiEeUt49Yoa2waRR7a5LdRAP3SVM8hz0KIBT4="
 
-google_cse_id: 002514516175957445995:tvgnhtemtbu
+atom_feed:
+  path                   : # blank (default) uses feed.xml
 
-# B. Navigation
-navbar:
-  style :  fab
-  brand:
-    title :  Home
-    img: "./assets/img/site/brand-white.png"
-  nav:
-  - title: Blog
-    url: /blog/
-  - title: Docs
-    child:
-     - title: Read the Docs
-       url: /docs
-     - title: Installation
-       url: /docs/01-install
-     - title: Global Settings
-       url: /docs/02-config
-     - title: Theming your site
-       url: /docs/03-theming
-     - title: Layouts & Snippets
-       url: /docs/04-layouts
-     - title: FAQs
-       url: /docs/05-faq
-     - title: Markdown cheatsheet
-       url: /docs/markdown-cheatsheet
-     - title: Syntax highlighting
-       url: /docs/syntax-highlighting
-     - title: Variable dictionary
-       url: /docs/variable-dictionary
-  - title: Skins
-    url: /skins
-  - title: Demos
-    child:
-     - title: Index
-       url: /demo
-     - title: Archive (all)
-       url: /demo/archive
-     - title: Tag Cloud (2 cols)
-       url: /demo/tags
-     - title: Category Cloud (single)
-       url: /demo/category
-     - title: Search Google CSE
-       url: /demo/search_google
-     - title: Search LUNR
-       url: /demo/search_lunr
-     - title: Classic Navbar
-       url: /demo/classic-navbar
-  - title: PageSpeed Results
-    url:  /pagespeed
-  - title: About
-    child:
-      - title: License
-        url: /license
-      - title: Showcase
-        url: /showcase
-      - title: Contribute
-        url: /contribute
-      - title: Changelog
-        url: https://github.com/dieghernan/chulapa/blob/master/CHANGELOG.md
+search                   : true # true, false (default)
+search_full_content      : true # true, false (default)
+search_provider          : algolia # lunr (default), algolia
+algolia:
+  application_id         : QB6HVGBSBA # YOUR_APPLICATION_ID
+  index_name             : minimal_mistakes # YOUR_INDEX_NAME
+  search_only_api_key    : 9d5014e5bbc77372547bce778dfa5663 # YOUR_SEARCH_ONLY_API_KEY
+  powered_by             : true # true (default), false
+  files_to_exclude:
+    - _posts/2017-11-28-post-exclude-search.md
+
+# SEO Related
+google_site_verification : "UQj93ERU9zgECodaaXgVpkjrFn9UrDMEzVamacSoQ8Y" # Replace this with your ID, or delete
+bing_site_verification   :
+naver_site_verification  :
+yandex_site_verification :
+baidu_site_verification  :
+
+# Social Sharing
+twitter:
+  username               : &twitter "mmistakes"
+facebook:
+  username               : &facebook "michaelrose"
+  app_id                 :
+  publisher              :
+og_image                 : "/assets/images/site-logo.png" # Open Graph/Twitter default site image
+# For specifying social profiles, used in _includes/seo.html
+# - https://developers.google.com/structured-data/customize/social-profiles
+social:
+  type                   : # Person or Organization (defaults to Person)
+  name                   : # If the user or organization name differs from the site's name
+  links: # An array of links to social media profiles
+    - "https://twitter.com/mmistakes"
+    - "https://www.facebook.com/michaelrose"
+
+# Analytics
+analytics:
+  provider               : "google-universal" # false (default), "google", "google-universal", "google-gtag", "custom"
+  google:
+    tracking_id          : "UA-2011187-3" # Replace this with your ID, or delete
+    anonymize_ip         : true
+
+
+# Site Author
+author:
+  name             : *name # *name is a YAML reference pointing to the &anchor earlier
+  avatar           : "/assets/images/michael-rose.jpg"
+  bio              : "Just another *boring*, *tattooed*, *time traveling*, *designer*."
+  location         : "Buffalo, NY"
+  links:
+    - label: "Made Mistakes"
+      icon: "fas fa-fw fa-link"
+      url: "https://mademistakes.com"
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/mmistakes"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/mmistakes"
+    - label: "Instagram"
+      icon: "fab fa-fw fa-instagram"
+      url: "https://instagram.com/mmistakes"
+
+
+# Site Footer
 footer:
   links:
-    - label: "RSS"
-      icon: "fa fa-rss"
-      url:  "./atom.xml"
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/mmistakes"
     - label: "GitHub"
-      icon: "fab fa-github"
-      url: https://github.com/dieghernan/
-    - label: "My blog"
-      icon: "fas fa-blog"
-      url: "https://dieghernan.github.io/"
-  copyright: "&copy; 2021 <span class='chulapa'>Chulapa</span> developers"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/mmistakes"
+    - label: "Instagram"
+      icon: "fab fa-fw fa-instagram"
+      url: "https://instagram.com/mmistakes"
 
-# C. Theme Settings
-chulapa-skin:
-  highlight   : "github"
-  skin        : gitdev
-  autothemer  :  true
 
-# D. Jekyll Defaults and collections: see https://jekyllrb.com/
-collections:
-  demo:
-    output: true
-    permalink: /demo/:name
-  docs:
-    output: true
-    permalink: /docs/:name
-  skins:
-    output: true
-    permalink: /skins/:name
-  posts:
-    output: true
-    permalink : /blog/:year:month:day_:title
-collections_dir     : collections
-permalink           : /:year:month:day_:title
-paginate: 4
-paginate_path: "/blog/page:num/"
-paginator_maxnum: 3
-defaults:
-  -
-    scope:
-      path: ""
-    values:
-      layout: "default"
-      header_type         : "base"
-      include_on_search   : false
-      cloudtag_url        : "/tags"
-      cloudcategory_url   : "/categories"
-      show_seo            : true
-  -
-    scope:
-      path: ""
-      type: "docs"
-    values:
-      header_type       : "hero"
-      show_sidetoc      : true
-      include_on_search : true
-      show_bottomnavs   : true
-      show_comments     : true
-      show_breadcrumb   : true
-      show_applause     : true
-      og_image: "/assets/img/site/banner-docs.png"
-      breadcrumb_list   :
-        - label: Home
-          url: /
-        - label: Docs
-          url: /docs
-  -
-    scope:
-      path: ""
-      type: "posts"
-    values:
-      header_type       : "post"
-      include_on_search : true
-      include_on_feed   : true
-      show_date         : true
-      show_related      : true
-      show_bottomnavs   : true
-      show_sociallinks  : true
-      show_comments     : true
-      show_tags         : true
-      show_categories   : true
-      show_author       : true
-      show_breadcrumb   : true
-      breadcrumb_list   :
-        - label: Blog
-          url: /blog/
-  -
-    scope:
-      path: ""
-      type: "skins"
-    values:
-      header_type       : "splash"
-      cloudtag_url      : "/demo/tags"
-      og_image          : '/assets/img/site/banner-skins.png'
-      include_on_search : true
-      show_date         : true
-      show_sociallinks  : true
-      show_comments     : true
-      show_tags         : true
-      show_categories   : true
-      show_related      : true
-      show_bottomnavs   : true
-      show_author       : true
-      show_toc          : true
-      show_sidetoc      : true
-      show_breadcrumb   : true
-      show_seo          : false
-      show_applause     : true
-      breadcrumb_list   :
-        - label: Skins
-          url: /skins
-  -
-    scope:
-      path: ""
-      type: "demo"
-    values:
-      layout            : "default"
-      header_type       : "base"
-      cloudtag_url      : "/demo/tags"
-      og_image          : '/assets/img/site/banner-demos.png'
-      include_on_search : true
-      cloudcategory_url : "/demo/category"
-      show_breadcrumb   : true
-      breadcrumb_list   :
-        - label: Demo
-          url: /demo
-  -
-    scope:
-      path: "assets/img/gallery"
-    values:
-      image_col         : gallery
-
-# XX. Other settings - no need to modify
-compress_html:
-  clippings: all
-  blanklines: true
-plugins:
-  - jekyll-github-metadata
-  - jekyll-paginate
-  - jekyll-include-cache
-  - jekyll-sitemap
-  - jekyll-redirect-from
-exclude:
-  - LICENSE
-  - README.md
-  - Gemfile
-  - vendor
-  - www_src
+# Reading Files
 include:
- - _pages
+  - .htaccess
+  - _pages
+exclude:
+  - "*.sublime-project"
+  - "*.sublime-workspace"
+  - vendor
+  - .asset-cache
+  - .bundle
+  - .jekyll-assets-cache
+  - .sass-cache
+  - assets/js/plugins
+  - assets/js/_main.js
+  - assets/js/vendor
+  - Capfile
+  - CHANGELOG
+  - config
+  - Gemfile
+  - Gruntfile.js
+  - gulpfile.js
+  - LICENSE
+  - log
+  - node_modules
+  - package.json
+  - Rakefile
+  - README
+  - tmp
+keep_files:
+  - .git
+  - .svn
+encoding: "utf-8"
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+
+
+# Conversion
 markdown: kramdown
 highlighter: rouge
 lsi: false
 excerpt_separator: "\n\n"
 incremental: false
+
+
+# Markdown Processing
 kramdown:
   input: GFM
   hard_wrap: false
   auto_ids: true
   footnote_nr: 1
-  footnote_backlink: '&uarr;'
   entity_output: as_char
-  toc_levels: 2..6
+  toc_levels: 1..6
   smart_quotes: lsquo,rsquo,ldquo,rdquo
   enable_coderay: false
 
+
+# Collections
+collections:
+  docs:
+    output: true
+    permalink: /:collection/:path/
+  recipes:
+    output: true
+    permalink: /:collection/:path/
+  pets:
+    output: true
+    permalink: /:collection/:path/
+  portfolio:
+    output: true
+    permalink: /:collection/:path/
+
+
+# Defaults
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: true
+      share: true
+      related: true
+  # _pages
+  - scope:
+      path: "_pages"
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+  # _docs
+  - scope:
+      path: ""
+      type: docs
+    values:
+      layout: single
+      read_time: false
+      author_profile: false
+      share: false
+      comments: false
+      sidebar:
+        nav: "docs"
+  # _recipes
+  - scope:
+      path: ""
+      type: recipes
+    values:
+      layout: single
+      author_profile: true
+      share: true
+      comments: true
+  # _pets
+  - scope:
+      path: ""
+      type: pets
+    values:
+      layout: single
+      author_profile: true
+      share: true
+      comment: true
+  # _portfolio
+  - scope:
+      path: ""
+      type: portfolio
+    values:
+      layout: single
+      author_profile: false
+      share: true
+
+
+# Sass/SCSS
 sass:
   sass_dir: _sass
-  style: compressed
+  style: compressed # http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
+
+
+# Outputting
+permalink: /:categories/:title/
+# paginate: 5 # amount of posts to show
+# paginate_path: /page:num/
+timezone: America/New_York # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+
+
+# Plugins (previously gems:)
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jemoji
+  - jekyll-include-cache
+
+# mimic GitHub Pages with --safe
+whitelist:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jemoji
+  - jekyll-include-cache
+
+
+# Archives
+#  Type
+#  - GitHub Pages compatible archive pages built with Liquid ~> type: liquid (default)
+#  - Jekyll Archives plugin archive pages ~> type: jekyll-archives
+#  Path (examples)
+#  - Archive page should exist at path when using Liquid method or you can
+#    expect broken links (especially with breadcrumbs enabled)
+#  - <base_path>/tags/my-awesome-tag/index.html ~> path: /tags/
+#  - <base_path>/categories/my-awesome-category/index.html ~> path: /categories/
+#  - <base_path>/my-awesome-category/index.html ~> path: /
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
+# https://github.com/jekyll/jekyll-archives
+# jekyll-archives:
+#   enabled:
+#     - categories
+#     - tags
+#   layouts:
+#     category: archive-taxonomy
+#     tag: archive-taxonomy
+#   permalinks:
+#     category: /categories/:name/
+#     tag: /tags/:name/
+
+
+# HTML Compression
+# - http://jch.penibelst.de/
+compress_html:
+  clippings: all
+  ignore:
+    envs: development
