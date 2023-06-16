@@ -1,6 +1,9 @@
 ---
-layout: post
+permalink: /tags/
+layout: tags
 title:  "Methods for providing information about responses to cancer immunotherapy and devices using the same"
+classes: wide
+layout: tags
 tags: [publication_patents]
 ---
 ## Info

@@ -1,7 +1,9 @@
 ---
+permalink: /tags/
 layout: tags
 title:  "CTD-squared Pancancer Chemosensitivity DREAM Challenge"
 classes: wide
+layout: tags
 tags: [competitions]
 ---
 

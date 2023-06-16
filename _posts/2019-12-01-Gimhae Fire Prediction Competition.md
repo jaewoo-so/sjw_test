@@ -1,6 +1,9 @@
 ---
-layout: post
+permalink: /tags/
+layout: tags
 title:  "Gimhae Fire Prediction Competition"
+classes: wide
+layout: tags
 tags: [competitions]
 ---
 
